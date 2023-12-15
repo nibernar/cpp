@@ -6,17 +6,12 @@
 /*   By: nibernar <nibernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:16:42 by nibernar          #+#    #+#             */
-/*   Updated: 2023/12/11 15:50:06 by nibernar         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:05:38 by nibernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-
-void	AddContact(PhoneBook *PhoneBook)
-{
-	std::string	InfoContact[5];
-}
 
 int	main(void)
 {
@@ -25,11 +20,20 @@ int	main(void)
 
 	while (1)
 	{
-		std:: getline(std::cin, str);
+		if(std::cin.eof())
+			return (std::cout << std::endl, 1);
+		str.clear();
+		std::getline(std::cin, str);
 		if (str == "ADD")
-			AddContact(&PhoneBook);
+		{
+			if (PhoneBook.addContact())
+				break;
+		}
 		else if (str == "SEARCH")
-			std::cout << "SEARCH" << std::endl;
+		{
+			if (PhoneBook.displayContact())
+				break;
+		}
 		else if (str == "EXIT")
 		{
 			std::cout << "EXIT" << std::endl;

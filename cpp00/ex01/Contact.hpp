@@ -6,7 +6,7 @@
 /*   By: nibernar <nibernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:13:06 by nibernar          #+#    #+#             */
-/*   Updated: 2023/12/11 15:34:03 by nibernar         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:06:21 by nibernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,30 @@
 #define CONTACT
 
 #include <string>
+#include <iostream>
+
+class PhoneBook;
 
 class Contact
 {
 	public:
 		Contact();
 		~Contact();
-		std::string GetFirstName(void);
-		std::string GetLastName(void);
-		std::string GetNickName(void);
-		std::string GetPhoneNumber(void);
-		std::string GetDarkestSecret(void);
+		std::string getFirstName(void);
+		std::string getLastName(void);
+		std::string getNickName(void);
+		std::string getPhoneNumber(void);
+		std::string getDarkestSecret(void);
+		int	newContact();
+		void deleteContact();
+		int	printContact(int i);
 		
 	private:
-		std::string	_FirstName;
-		std::string	_LastName;
-		std::string	_NickName;
-		std::string	_PhoneNumber;
-		std::string	_DarkestSecret;
+		std::string	_firstName;
+		std::string	_lastName;
+		std::string	_nickName;
+		std::string	_phoneNumber;
+		std::string	_darkestSecret;
 };
 
 #endif
