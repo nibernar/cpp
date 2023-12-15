@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nibernar <nibernar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasbernard <nicolasbernard@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:13:06 by nibernar          #+#    #+#             */
-/*   Updated: 2023/12/11 15:34:03 by nibernar         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:32:34 by nicolasbern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 #define CONTACT
 
 #include <string>
+#include <iostream>
 
-class Contact
+class	Contact
 {
 	public:
 		Contact();
 		~Contact();
-		std::string GetFirstName(void);
-		std::string GetLastName(void);
-		std::string GetNickName(void);
-		std::string GetPhoneNumber(void);
-		std::string GetDarkestSecret(void);
-		
+		std::string	GetFirstName();
+		std::string	GetLastName();
+		std::string	GetNickName();
+		std::string	GetPhoneNumber();
+		std::string	GetDarkestSecret();
+		int	NewContact();
 	private:
 		std::string	_FirstName;
 		std::string	_LastName;

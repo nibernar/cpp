@@ -3,20 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nibernar <nibernar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasbernard <nicolasbernard@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:16:42 by nibernar          #+#    #+#             */
-/*   Updated: 2023/12/11 15:50:06 by nibernar         ###   ########.fr       */
+/*   Updated: 2023/12/14 22:47:13 by nicolasbern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-
-void	AddContact(PhoneBook *PhoneBook)
-{
-	std::string	InfoContact[5];
-}
 
 int	main(void)
 {
@@ -27,9 +22,15 @@ int	main(void)
 	{
 		std:: getline(std::cin, str);
 		if (str == "ADD")
-			AddContact(&PhoneBook);
+		{
+			if (PhoneBook.AddContact())
+				break;
+		}
 		else if (str == "SEARCH")
-			std::cout << "SEARCH" << std::endl;
+		{
+			if (PhoneBook.displayContact())
+				break;
+		}
 		else if (str == "EXIT")
 		{
 			std::cout << "EXIT" << std::endl;
